@@ -1,0 +1,8 @@
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem 0.5rem;
+}
+label::after {
+    content: ':';
+}

@@ -1,0 +1,9 @@
+<p>hero works!</p>
+<ng-container *ngIf="hero$ | async as hero">
+    <pre>{{ hero | json }}</pre>
+    <form [formGroup]="heroForm" [ngxsForm]="formPath" (ngSubmit)="onSubmit()">
+        <label for="name">Name</label><input type="text" formControlName="name" id="name">
+        <label for="rating">Rating</label><input type="number" min="0" max="11" formControlName="rating" id="rating">
+        <button [disabled]="heroForm.pristine || heroForm.invalid" type="submit">Save</button>
+    </form>
+</ng-container>

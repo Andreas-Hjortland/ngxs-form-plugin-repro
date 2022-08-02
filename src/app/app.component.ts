@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Select } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { AppState } from './app-state';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'forms';
+
+  @Select(AppState.heroes)
+  heroes$!: Observable<ReturnType<typeof AppState.heroes>>;
 }
